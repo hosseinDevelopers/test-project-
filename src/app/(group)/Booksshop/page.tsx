@@ -27,6 +27,7 @@ export interface Iarticle {
   reservations?: IReservation[];
 }
 
+export const dynamic = "force-dynamic";
 async function Books() {
   
    const res = await fetch("http://localhost:3001/book/all");

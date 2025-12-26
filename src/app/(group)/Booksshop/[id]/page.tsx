@@ -6,7 +6,7 @@ import { Iarticle } from "../page";
 interface IProductProps {
   params: { id: string };
 }
-
+export const dynamic = "force-dynamic";
 export default async function BookCardSimple({ params }: IProductProps) {
   const id = params.id;
 
@@ -27,3 +27,4 @@ export default async function BookCardSimple({ params }: IProductProps) {
     </div>
   );
 }
+

@@ -35,7 +35,7 @@ export default function ActiveReservations() {
         if (!token) throw new Error("No token");
 
         const res = await fetch(
-          "http://localhost:3001/book/reservations/active",
+          `${process.env.NEXT_PUBLIC_API_URL}/book/reservations/active`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

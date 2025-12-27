@@ -8,7 +8,7 @@ function BookAdmin() {
   const [data, setData] = useState<Iarticle[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/book/all")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/all`)
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => console.error(error));

@@ -24,7 +24,7 @@
       const timeout = setTimeout(async () => {
         setLoading(true);
         try {
-          const res = await fetch(`http://localhost:3001/book/search?q=${query}`);
+          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/search?q=${query}`);
           const text = await res.text();
           console.log("Server response:", text);
 

@@ -45,7 +45,7 @@ export default function DashboardPanel() {
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
-        const res = await fetch("http://localhost:3001/admin/dashboard", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/dashboard`, {
           cache: "no-store",
         });
 

@@ -30,7 +30,7 @@ export interface Iarticle {
 export const dynamic = "force-dynamic";
 async function Books() {
   
-   const res = await fetch("http://localhost:3001/book/all");
+   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/all`);
    const data = (await res.json()) as Iarticle[];
 
   return (

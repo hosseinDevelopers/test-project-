@@ -18,7 +18,7 @@ function Articledinamik({ book }: { book: Iarticle }) {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/book/reserve", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/reserve`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -191,7 +191,7 @@ function Dynamikroute({ params }: IProductProps) {
             e.preventDefault();
 
             try {
-              const res = await fetch(`http://localhost:3001/book/${id}`, {
+              const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/${id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 credentials: "include",

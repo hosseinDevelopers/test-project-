@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export default async function BookCardSimple({ params }: IProductProps) {
   const id = params.id;
 
-  const res = await fetch(`http://localhost:3001/book/${id}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/book/${id}`, {
     cache: "no-store",
   });
 

@@ -97,7 +97,7 @@ export default function SidebarProvider({
     if (mode === "register") setMode("login");
 
     try {
-      const res = await fetch("http://localhost:3001/auth/login", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -132,7 +132,7 @@ export default function SidebarProvider({
     }
 
     try {
-      const res = await fetch("http://localhost:3001/auth/loginAdmin", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/loginAdmin`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -159,7 +159,7 @@ export default function SidebarProvider({
   };
    const checkAdminStatus = async () => {
     try {
-      const res = await fetch("http://localhost:3001/auth/admin-check", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/admin-check`, {
         method: "GET",
         credentials: "include",
       });
@@ -192,7 +192,7 @@ export default function SidebarProvider({
     if (mode === "register") setMode("login");
 
     try {
-      const res = await fetch("http://localhost:3001/auth/register", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password, name }),
@@ -218,8 +218,8 @@ export default function SidebarProvider({
   };
   const checkLogin = async () => {
     const token = localStorage.getItem("token");
-    const res = await fetch("http://localhost:3001/auth/status", {
-      method: "GET", // صراحتاً مشخص کن
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/status`, {
+      method: "GET", 
       headers: {
         Authorization: "Bearer " + token,
         "Content-Type": "application/json", 
@@ -242,7 +242,7 @@ export default function SidebarProvider({
   const handleLogout = async () => {
     const token = localStorage.getItem("token");
     try {
-      const res = await fetch("http://localhost:3001/auth/logout", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/logout`, {
         method: "POST", 
         headers: {
           Authorization: "Bearer " + token,
